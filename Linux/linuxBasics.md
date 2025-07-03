@@ -59,9 +59,10 @@ Command	What It Does
  Add -r  for directories
 
 ### Getting Help
+
 Command	Use
--```man <command>	Open manual page```
--```<command> --help	Get usage summary```
+- ```man <command>	Open manual page```
+- ```<command> --help	Get usage summary```
 
 Example:
 ```
