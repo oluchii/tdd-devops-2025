@@ -41,20 +41,22 @@ These distributions offer a variety of features and target different audiences. 
 When choosing a Linux distribution, it is important to consider your needs and preferences. If you are new to Linux, it is recommended to start with a user-friendly distribution such as Ubuntu . Once you have become more familiar with Linux, you can try other distributions that offer more features or customization options.
 
 ### Basic Navigation
+
  Why Use the Terminal?
 The terminal is powerful, fast, and gives you full control over your system. GUI is like automatic — terminal is manual — but gives you more precision.
 
 ### 🖥️ Terminal Basics
 Command	What It Does
-- ```pwd	 Print current directory (where you are)```
-- ```ls	 List files in current directory```
-- ``` cd <dir>	Change directory```
-- ```mkdir <dir>	Make a new directory```
-- ```touch <file>	Create a new file```
-- ```cp <src> <dest>	Copy files```
-- ```mv <src> <dest>	Move/rename files```
--```rm <file>	Delete files```
- Add -r <folder> for directories
+- ```pwd	              Print current directory (where you are)```
+- ```ls	               List files in current directory```
+- ```cd <dir>         	Change directory```
+- ```mkdir <dir>	      Make a new directory```
+- ```touch <file>	     Create a new file```
+- ```cp <src> <dest>	  Copy files```
+- ```mv <src> <dest>	  Move/rename files```
+- ```rm <file>	        Delete files```
+  
+ Add -r  for directories
 
 ### Getting Help
 Command	Use
@@ -80,6 +82,7 @@ Check file permissions:
 Example:
 
 ```-rw-r--r-- 1 user user 123 Jul 3 10:00 file.txt```
+
 Breakdown:
 
 rwx: Read, write, execute
@@ -88,31 +91,39 @@ rwx: Read, write, execute
 
 Change permissions:
 
-bash
-Copy
-Edit
 chmod 755 file.sh
-Change owner:
 
-bash
-Copy
-Edit
+Change owner:
 chown username:groupname file.txt
 Run with admin rights:
-
 sudo command
-⚙️ Part 3: Practical Usage
+
 📦 Package Management
 Depending on the distro:
 
 Distro	Install	Remove	Update
-Ubuntu/Debian	sudo apt install <pkg>	sudo apt remove <pkg>	sudo apt update && sudo apt upgrade
-Fedora	sudo dnf install <pkg>	sudo dnf remove <pkg>	sudo dnf update
-Arch	sudo pacman -S <pkg>	sudo pacman -R <pkg>	sudo pacman -Syu
+- Ubuntu/Debian
+  ```
+   sudo apt install <pkg>
+  	sudo apt remove <pkg>
+  	sudo apt update && sudo apt upgrade```
+- Fedora
+  ```
+   sudo dnf install <pkg>
+  	sudo dnf remove <pkg>
+  	sudo dnf update ```
+- Arch
+  ```
+   sudo pacman -S <pkg>
+  sudo pacman -R <pkg>
+  	sudo pacman -Syu
+  ```
 
 Example:
-sudo apt install neofetch
-### 🐚 Simple Scripting
+```sudo apt install neofetch```
+
+### Simple Scripting
+
 Basic Bash script:
 ```sh
 #!/bin/bash
@@ -130,7 +141,7 @@ Command	Use
 - ```ip a	Show IP addresses```
 - ```curl <url>	Fetch content from web```
 - ```scp file user@host:/path	Secure copy over SSH```
--``` ssh user@host	Connect to another machine```
+- ``` ssh user@host	Connect to another machine```
 
 Example:
 ping google.com
