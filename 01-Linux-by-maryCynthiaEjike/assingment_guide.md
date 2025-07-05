@@ -27,9 +27,9 @@ B. Create a folder and two files with different permissions.
 
 - use the `mkdir` to  make a directory
 
-- use the `cd` command to enter the directory 
+- use the `cd` command to enter the directory created
 
-- use the `touch` to create a file 
+- use the `touch` to create a file in the directory 
 
 - use the `chmod` command to change permission of the files 
 
