@@ -42,40 +42,41 @@ When choosing a Linux distribution, it is important to consider your needs and p
 
 ### Basic Navigation
 
- Why Use the Terminal?
+Why Use the Terminal?
 The terminal is powerful, fast, and gives you full control over your system. GUI is like automatic — terminal is manual — but gives you more precision.
 
 ### 🖥️ Terminal Basics
 Command	What It Does
-- ```pwd	              Print current directory (where you are)```
-- ```ls	               List files in current directory```
-- ```cd <dir>         	Change directory```
-- ```mkdir <dir>	      Make a new directory```
-- ```touch <file>	     Create a new file```
-- ```cp <src> <dest>	  Copy files```
-- ```mv <src> <dest>	  Move/rename files```
-- ```rm <file>	        Delete files```
+- ```pwd	               Print current directory (where you are)```
+- ```ls	                 List files in current directory```
+- ```cd <dir>         	 Change directory```
+- ```mkdir <dir>	       Make a new directory```
+- ```touch <file>	       Create a new file```
+- ```cp <src> <dest>	   Copy files```
+- ```mv <src> <dest>	   Move/rename files```
+- ```rm <file>	         Delete files```
   
  Add -r  for directories
 
 ### Getting Help
 
 Command	Use
-- ```man <command>	Open manual page```
-- ```<command> --help	Get usage summary```
+- ```man <command>	   Open manual page```
+- ```<command> --help	 Get usage summary```
 
 Example:
 ```
 man ls
 ls --help
 ```
+
 ### 📂 File System Structure 
 Folder	Purpose
-- /	     Root of the system
-- /home	 User folders
-- /etc	  Configuration files
-- /bin  	Essential system binaries (e.g. ls, cp)
-- /var	  Logs, variable files (e.g. /var/log)
+- /	       Root of the system
+- /home	   User folders
+- /etc	   Configuration files
+- /bin  	 Essential system binaries (e.g. ls, cp)
+- /var	   Logs, variable files (e.g. /var/log)
 
 ### 🔐 Permissions & Ownership
 Check file permissions:
@@ -91,12 +92,16 @@ rwx: Read, write, execute
 3 sets: Owner / Group / Others
 
 Change permissions:
-
-chmod 755 file.sh
-
+```
+ chmod 755 file.sh
+```
 Change owner:
-chown username:groupname file.txt
+```
+chown <username>:<groupname> file.txt
+
+```
 Run with admin rights:
+
 sudo command
 
 📦 Package Management
@@ -105,19 +110,21 @@ Depending on the distro:
 Distro	Install	Remove	Update
 - Ubuntu/Debian
   ```
-   sudo apt install <pkg>
-  	sudo apt remove <pkg>
-  	sudo apt update && sudo apt upgrade```
+  sudo apt install <pkg>
+  sudo apt remove <pkg>
+  sudo apt update && sudo apt upgrade ```
 - Fedora
   ```
-   sudo dnf install <pkg>
-  	sudo dnf remove <pkg>
-  	sudo dnf update ```
+  sudo dnf install <pkg>
+  sudo dnf remove <pkg>
+  sudo dnf update 
+  ```
 - Arch
   ```
-   sudo pacman -S <pkg>
+  sudo pacman -S <pkg>
   sudo pacman -R <pkg>
-  	sudo pacman -Syu
+  sudo pacman -Syu
+
   ```
 
 Example:
@@ -134,21 +141,49 @@ Save as hello.sh, then:
 
 - ```chmod +x hello.sh```
 - ```./hello.sh```
- You can automate tasks like backups or updates with scripts.
+
+You can automate tasks like backups or updates with scripts.
 
 🌐 Networking Basics
 Command	Use
-- ```ping <host>	Check network connection```
-- ```ip a	Show IP addresses```
-- ```curl <url>	Fetch content from web```
-- ```scp file user@host:/path	Secure copy over SSH```
-- ``` ssh user@host	Connect to another machine```
+- ```ping <host>	             Check network connection```
+- ```ip a	                     Show IP addresses```
+- ```curl <url>             	 Fetch content from web```
+- ```scp file user@host:/path	 Secure copy over SSH```
+- ``` ssh user@host	           Connect to another machine```
 
 Example:
 ping google.com
 ssh student@192.168.1.100
 
+### Navigation & Files
+- `tree`: Visual folder structure (install with   sudo apt install tree)
+- `stat <file>`: Detailed file info (timestamps, size, etc.)
+- `file <file>`:Tells you the file type
+- `locate <name>`:	Quickly find files by name (use sudo updatedb first)
+- `find . -name "*.txt"	`:Find files recursively by pattern
+- `du -sh *`: Show disk usage of files/folders
+- `df -h`: Show free space on mounted drives
 
+### ⚙️ System Info & Monitoring
+- `uname -a`: Kernel info
+- `top or htop`: Live process monitor (htop is prettier)
+- `free -h`: RAM usage
+- `uptime`: System load and running time
+- `whoami`:	Current user
+- `hostname`:	System name
+- `history`	:Show command history
+- `watch <cmd>`: Run a command repeatedly (e.g. watch df -h)
+
+### Additional Resources: 
+For Further Linux Practice check out these free resources.
+ 
+
+- [Udacity : Configuring linux web servers ](https://www.udacity.com/course/configuring-linux-web-servers--ud299)
+
+- [Kodekloud: linux Free Labs](https://kodekloud.com/free-labs/linux)
+
+- [The Linux Journey](https://linuxjourney.com/)
 
 
   
