@@ -47,22 +47,22 @@ The terminal is powerful, fast, and gives you full control over your system. GUI
 
 ### 🖥️ Terminal Basics
 Command	What It Does
-- ```pwd	               Print current directory (where you are)```
-- ```ls	                 List files in current directory```
-- ```cd <dir>         	 Change directory```
-- ```mkdir <dir>	       Make a new directory```
-- ```touch <file>	       Create a new file```
-- ```cp <src> <dest>	   Copy files```
-- ```mv <src> <dest>	   Move/rename files```
-- ```rm <file>	         Delete files```
+- `pwd`:  Print current directory (where you are)
+- `ls`:List files in current directory
+- `cd <dir> `:Change directory
+- `mkdir <dir>`:Make a new directory
+- `touch <file>	`: Create a new file
+- `cp <src> <dest>`:Copy files
+- `mv <src> <dest>`:Move/rename files
+- `rm <file>`:Delete files
   
  Add -r  for directories
 
 ### Getting Help
 
 Command	Use
-- ```man <command>	   Open manual page```
-- ```<command> --help	 Get usage summary```
+- `man <command>`:Open manual page
+- `<command> --help`:Get usage summary
 
 Example:
 ```
@@ -90,6 +90,29 @@ Breakdown:
 rwx: Read, write, execute
 
 3 sets: Owner / Group / Others
+sample:  -rwxrwxrwx
+
+![alt text](image.png)
+
+File permission numbers
+| Permission  | Binary | Decimal |
+| ----------- | ------ | ------- |
+| `r` (read)  | `100`  | **4**   |
+| `w` (write) | `010`  | **2**   |
+| `x` (exec)  | `001`  | **1**   |
+
+You add these together for each set of permissions
+
+| Permissions | Binary | Decimal       |
+| ----------- | ------ | ------------- |
+| `rwx`       | `111`  | 4+2+1 = **7** |
+| `rw-`       | `110`  | 4+2+0 = **6** |
+| `r--`       | `100`  | 4+0+0 = **4** |
+| `r-x`       | `101`  | 4+0+1 = **5** |
+| `--x`       | `001`  | 0+0+1 = **1** |
+
+ie - rwx rwx rwx
+   7   7   7  → 777
 
 Change permissions:
 ```
@@ -104,10 +127,9 @@ Run with admin rights:
 
 sudo command
 
-📦 Package Management
+### 📦 Package Management
 Depending on the distro:
-
-Distro	Install	Remove	Update
+Distro: Install	Remove	Update
 - Ubuntu/Debian
   ```
   sudo apt install <pkg>
@@ -164,6 +186,15 @@ ssh student@192.168.1.100
 - `find . -name "*.txt"	`:Find files recursively by pattern
 - `du -sh *`: Show disk usage of files/folders
 - `df -h`: Show free space on mounted drives
+
+###  User Management Commands
+- `useradd`:Creates a new user account.
+- `userdel` : Deletes a user account from the system.
+- `passwd` :Sets or changes a user's password.
+- `groupmod` : Modifies an existing group’s properties.
+- `groups` :Displays all groups a user belongs to.
+- `id`:Shows a user's UID, GID, and group information.
+
 
 ### ⚙️ System Info & Monitoring
 - `uname -a`: Kernel info
