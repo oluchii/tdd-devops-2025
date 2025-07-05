@@ -12,24 +12,25 @@ B. Create a folder and two files with different permissions.
 
  - Set different permissions (who can read/write)
 
- - Assign file ownership
 
-##### Step by Step Guide
+#####  Guide
 
 - create users eg.user1,user2 using the `usermod` command
 
-- -m helps make a home folder (/home/user1)
+- `-m`: helps make a home folder (/home/user1)
 
-- -s /bin/bash → Give them a shell (so they can log in)
+- `-s /bin/bash`: Give them a shell (so they can log in)
 
-- Set password with the `passwd` commannd for each user
+- Set password with the `passwd` command for each user
 
 - You will get a prompt to input your password
 
-- mkdir - helps make a directory
+- use the `mkdir` to  make a directory
 
-- touch - helps create a file 
+- use the `cd` command to enter the directory 
 
-- use the chmod command to change permission of the files 
+- use the `touch` to create a file 
+
+- use the `chmod` command to change permission of the files 
 
 
