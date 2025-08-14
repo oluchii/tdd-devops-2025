@@ -1,20 +1,9 @@
 #!/bin/bash
 
-echo "Welcome to Luu's Calculator!"
+echo "Welcome to the Calculator!"
 read -p "Enter your name: " name
-
 read -p "Enter first number: " num1
-if ! [[ "$num1" =~ ^-?[0-9]+$ ]]; then
-    echo "First number is not a valid integer."
-    exit 1
-fi
-
 read -p "Enter second number: " num2
-if ! [[ "$num2" =~ ^-?[0-9]+$ ]]; then
-    echo "Second number is not a valid integer."
-    exit 1
-fi
-
 echo "Choose operation: +, -, *, /, odd/even"
 read -p "Enter operation: " op
 
@@ -42,18 +31,13 @@ elif [[ "$op" == "/" ]]; then
     if [[ "$num2" -eq 0 ]]; then
         echo "Cannot divide by zero."
     else
-        if command -v bc >/dev/null 2>&1; then
-            ans=$(echo "scale=2; $num1 / $num2" | bc)
-            if [[ "$ans" =~ ^-?[0-9]+$ ]]; then
-                eo=$(is_even_odd $ans)
-                echo "Hello $name, you entered $num1 / $num2. Your Ans is $ans, which is $eo."
-            else
-                echo "Hello $name, you entered $num1 / $num2. Your Ans is $ans."
-            fi
-        else
-            ans=$((num1 / num2))
+        ans=$(echo "scale=2; $num1 / $num2" | bc)
+        # For division, check if the answer is an integer before checking even/odd
+        if [[ "$ans" =~ ^-?[0-9]+$ ]]; then
             eo=$(is_even_odd $ans)
-            echo "Hello $name, you entered $num1 / $num2. Your Ans is $ans, which is $eo. (Integer division, bc not found)"
+            echo "Hello $name, you entered $num1 / $num2. Your Ans is $ans, which is $eo."
+        else
+            echo "Hello $name, you entered $num1 / $num2. Your Ans is $ans."
         fi
     fi
 elif [[ "$op" == "odd/even" ]]; then
